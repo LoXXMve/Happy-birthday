@@ -1,26 +1,18 @@
-﻿<!doctype html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>HTML5+Canvas漂亮的3D烟花动画生日特效</title>
-
-<style>
-html,body{
-	margin:0px;
-	width:100%;
-	height:100%;
-	overflow:hidden;
-	background:#000;
-}
-</style>
-
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>生日快乐</title>
 </head>
 <body>
-<canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:8888"></canvas>
-<canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas" ></canvas>
+	<audio src="3.m4a" type="audio/m4a" autoplay></audio>
+	<canvas id="canvas" ></canvas>
+    <canvas  class="canvas" ></canvas>
 <div class="overlay">
   <div class="tabs">
-    <div class="tabs-labels"><span class="tabs-label">Commands</span><span class="tabs-label">Info</span><span class="tabs-label">Share</span></div>
+    <div class="tabs-labels"><span class="tabs-label"></span><span class="tabs-label"></span><span class="tabs-label"></span></div>
 
     <div class="tabs-panels">
       <ul class="tabs-panel commands">
@@ -230,21 +222,22 @@ function draw(){
 	ctx.clearRect(0,0,cx*2,cy*2);
 
 	ctx.fillStyle="#ff8";
-	for(i=-100;i<100;i+=3){
-		for(j=-100;j<100;j+=4){
-			x=i;z=j;y=25;
-			point=rasterizePoint(x,y,z);
-			if(point.d!=-1){
-				size=250/(1+point.d);
-				d = Math.sqrt(x * x + z * z);
-				a = 0.75 - Math.pow(d / 100, 6) * 0.75;
-				if(a>0){
-					ctx.globalAlpha = a;
-					ctx.fillRect(point.x-size/2,point.y-size/2,size,size);
-				}
-			}
-		}
-	}
+	for (var i = -100; i < 100; i += 3) {
+    for (var j = -100; j < 100; j += 4) {
+      var x = i, z = j, y = 25;
+      var point = rasterizePoint(x, y, z);
+      if (point.d !== -1) {
+        var size = 250 / (1 + point.d);
+        var d = Math.sqrt(x * x + z * z);
+        var a = 0.75 - Math.pow(d / 100, 6) * 0.75;
+        if (a > 0) {
+          ctx.globalAlpha = a;
+          ctx.fillRect(point.x - size / 2, point.y - size / 2, size, size);
+        }
+      }
+    }
+  }
+
 	ctx.globalAlpha=1;
 	for(i=0;i<seeds.length;++i){
 		point=rasterizePoint(seeds[i].x,seeds[i].y,seeds[i].z);

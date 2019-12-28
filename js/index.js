@@ -13,6 +13,13 @@
 */
 
 
+document.addEventListener('click', function() {
+  var audio = document.querySelector('audio');
+  if (audio) {
+    audio.play();
+  }
+});
+
 var S = {
   init: function () {
     var action = window.location.href,
@@ -24,7 +31,7 @@ var S = {
     if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
-      S.UI.simulate('|#countdown 3||某|某|祝|你|生|日|快|乐|#rectangle|');
+      S.UI.simulate('|#countdown 3||致|罗亮|先生|生日|快乐|愿你|管他|几岁|开心|万岁|事业|有成|财运|亨通|最后|由我|送上|大哥|生日|快乐|哟|#rectangle|');
     }
 
     S.Drawing.loop(function () {
@@ -206,7 +213,7 @@ S.UI = (function () {
         default:
           S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? 'What?' : current));
       }
-    }, 2000, sequence.length);
+    }, 3500, sequence.length);
   }
 
   function checkInputWidth(e) {
