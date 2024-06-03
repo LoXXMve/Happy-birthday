@@ -20,3 +20,9 @@ html,body{
 audio{
     display: none;
 }
+#firework{
+    position: fixed;
+    top:0;
+    left:0;
+    pointer-events: none;
+}

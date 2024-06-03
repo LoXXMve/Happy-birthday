@@ -20,6 +20,7 @@ document.addEventListener('click', function() {
   }
 });
 
+
 var S = {
   init: function () {
     var action = window.location.href,
