@@ -1,3 +1,10 @@
+html,body{
+    margin:0px;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:linear-gradient(aqua,blueviolet);
+}
 #canvas{
     position:absolute;
     width:100%;
@@ -10,13 +17,7 @@
     height:100%;
     z-index:9999;
 }
-html,body{
-    margin:0px;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    background:linear-gradient(aqua,blueviolet);
-}
+
 audio{
     display: none;
 }
