@@ -32,7 +32,7 @@ var S = {
      if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
-      S.UI.simulate('|#countdown 3||致|罗亮|先生|生日|快乐|🎂|愿你|管他|几岁|开心|万岁|事业|有成|财运|亨通|最后|由我|送上|大哥|生日|快乐|🎉|❤|#rectangle|');
+      S.UI.simulate('|#countdown 3||致|罗亮|先生|生日|快乐|🎂|愿你|管他|几岁|开心|万岁|事业|有成|财运|亨通|最后|由我|来说|大哥|生日|快乐|🎉|❤|#rectangle|');
     }
 
 
